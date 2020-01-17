@@ -3,6 +3,10 @@ Implementation of Spring Data JPA Specification based on [QueryDecoder](https://
 
 ## Usage example
 
+In this example, the repository returns all persons where name contains "Paulo".
+
 ```java
-Specification<Person> spec = ExpressionSpecification.of("nome[CT]:Paulo");
+Specification<Person> spec = ExpressionSpecification.of("name[CT]:Paulo");
+
+personRepository.findAll(spec);
 ```
